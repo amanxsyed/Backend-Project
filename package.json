@@ -1,0 +1,27 @@
+{
+  "name": "video-streaming",
+  "version": "1.0.0",
+  "description": "a video streaming backend",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanxsyed/Backend-Project.git"
+  },
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "author": "Syed Aman Shah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amanxsyed/Backend-Project/issues"
+  },
+  "homepage": "https://github.com/amanxsyed/Backend-Project#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
