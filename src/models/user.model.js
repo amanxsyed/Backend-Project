@@ -8,7 +8,7 @@ const userSchema = new Schema(
             type:String,
             required:true,
             unique:true,
-            lowcase:true,
+            lowercase:true,
             trim:true,
             index:true
         },
@@ -16,7 +16,7 @@ const userSchema = new Schema(
             type:String,
             required:true,
             unique:true,
-            lowcase:true,
+            lowercase:true,
             trim:true,
 
         },
@@ -36,7 +36,7 @@ const userSchema = new Schema(
         },
         watchHistory: [
             {
-                type: Schema.types.ObjectId,
+                type: Schema.Types.ObjectId,
                 ref: "Video"
             }
         ],
