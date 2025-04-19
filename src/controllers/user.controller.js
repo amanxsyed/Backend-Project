@@ -11,7 +11,7 @@ const generateAccessandRefreshToken = async (userId) => {
     const refreshToken = await user.generateRefreshToken();
 
     user.refreshToken = refreshToken;
-    await user.save({validateBeforeSave: false });
+    await user.save({ validateBeforeSave: false });
 
     return { accessToken, refreshToken };
 
@@ -102,8 +102,10 @@ const loginUser = asyncHandler(async(req, res)=>{
   // send cookie
 
   const { email, username, password } = req.body;
+  console.log(email);
+   
 
-  if(!username || !email){
+  if(!username && !email){
     throw new ApiError(400, "Username or email is required!");
   };
 
@@ -117,7 +119,7 @@ const loginUser = asyncHandler(async(req, res)=>{
 
   const isPasswordValid = await user.comparePassword(password)
 
-  if(!passwordValid){
+  if(!isPasswordValid){
     throw new ApiError(401, "Invalid password!");
   }
 
@@ -173,6 +175,8 @@ const logoutUser = asyncHandler(async(req, res)=>{
     new ApiResponse(200, {}, "User logged out successfully!")
   )
 });
+
+
 
 
 
